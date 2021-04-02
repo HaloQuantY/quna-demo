@@ -6,6 +6,10 @@ import less from 'less'
 import './assets/styles/normalize.css'
 import './assets/styles/iconfont.css'
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
+Vue.use(VueAwesomeSwiper)
+
 Vue.use(less)
 Vue.config.productionTip = false
 
