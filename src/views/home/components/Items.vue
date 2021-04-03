@@ -93,6 +93,7 @@ export default {
 
 <style lang="less" scoped>
 @import '~@/assets/styles/variable.less';
+@import '~@/assets/styles/mixins.less';
 .items {
   overflow: hidden;
   height: 0;
@@ -123,6 +124,7 @@ export default {
       }
     }
     .icon-sub {
+      .ellipsis();
       position: absolute;
       left: 0;
       right: 0;
