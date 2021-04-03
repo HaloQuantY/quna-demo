@@ -57,7 +57,7 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 0;
-  padding-bottom: 31.5%;
+  padding-bottom: 30.515%;
   .swiper-slide {
     img {
       width: 100%;
