@@ -99,6 +99,7 @@ export default {
   height: 0;
   display: flex;
   flex-wrap: wrap;
+  margin-top: .1rem;
   list-style: none;
   padding-bottom: 50%;
   // background: #ccc;
@@ -113,7 +114,7 @@ export default {
       position: absolute;
       top: 0;
       right: 0;
-      bottom: 0.44rem;
+      bottom: .8rem;
       left: 0;
       padding: 0.1rem;
       // background: darkgoldenrod;
@@ -129,10 +130,10 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;
-      height: 0.44rem;
-      line-height: 0.44rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
       text-align: center;
-      font-size: 0.16rem;
+      font-size: 0.3rem;
       font-weight: 600;
       color: @dark-color;
       // background: cyan;
