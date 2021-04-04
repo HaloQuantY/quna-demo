@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <swiper ref="mySwiper" :options="swiperOptions">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
-        <img class="swiper-img" :src="item.imgUrl"/>
+    <swiper ref="mySwiper" :options="swiperOptions" v-if="showSwiper">
+      <swiper-slide v-for="item of list" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl" />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -12,6 +12,11 @@
 <script>
 export default {
   name: 'carrousel',
+  props: {
+    list: {
+      type: Array
+    }
+  },
   data () {
     return {
       swiperOptions: {
@@ -21,33 +26,16 @@ export default {
         },
         loop: true,
         autoplay: true
-      },
-      swiperList: [
-        {
-          id: '001',
-          imgUrl:
-            '//imgs.qunarzz.com/vs_ceph_vcimg/79faa5a73731e84a7731db49d5baa91e.jpeg'
-        },
-        {
-          id: '002',
-          imgUrl:
-            '//imgs.qunarzz.com/vs_ceph_vcimg/6ff121fd416169b8d56c60384e3baf79.jpeg'
-        },
-        {
-          id: '003',
-          imgUrl:
-            '//imgs.qunarzz.com/vs_ceph_vcimg/c0a60fa20379efa4f02ce527a680dc1b.jpeg'
-        }
-      ]
+      }
     }
   },
   computed: {
     swiper () {
       return this.$refs.mySwiper.$swiper
+    },
+    showSwiper () {
+      return this.list ? this.list.length : 0
     }
-  },
-  mounted () {
-    console.log('Current Swiper instance object', this.swiper)
   }
 }
 </script>

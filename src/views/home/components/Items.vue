@@ -16,60 +16,14 @@
 <script>
 export default {
   name: 'HomeItems',
+  props: {
+    itemList: {
+      type: Array
+    }
+  },
   data () {
     return {
-      swiperOptions: {},
-      itemList: [
-        {
-          id: '001',
-          imgUrl: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-          imgSub: '酒店'
-        },
-        {
-          id: '002',
-          imgUrl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-          imgSub: '机票'
-        },
-        {
-          id: '003',
-          imgUrl: '//s.qunarzz.com/homenode/images/touchheader/train.png',
-          imgSub: '火车票'
-        },
-        {
-          id: '004',
-          imgUrl: '//s.qunarzz.com/homenode/images/touchheader/package.png',
-          imgSub: '度假'
-        },
-        {
-          id: '005',
-          imgUrl: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-          imgSub: '景点门票'
-        },
-        {
-          id: '006',
-          imgUrl:
-            'https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png',
-          imgSub: '海外酒店'
-        },
-        {
-          id: '007',
-          imgUrl:
-            'https://picbed.qunarzz.com/a36d2288f19e54562338f4d8ef986288.png',
-          imgSub: '低价机票'
-        },
-        {
-          id: '008',
-          imgUrl:
-            'https://picbed.qunarzz.com/377db8cb2143aebf01869c9baad3d325.png',
-          imgSub: '火车票船票'
-        },
-        {
-          id: '009',
-          imgUrl:
-            'https://picbed.qunarzz.com/ae617a31e0bd5803d76918b817f6d942.png',
-          imgSub: '自由行'
-        }
-      ]
+      swiperOptions: {}
     }
   },
   computed: {
