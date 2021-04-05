@@ -20,6 +20,7 @@ export default {
   overflow: hidden;
   height: @header-height;
   line-height: @header-height;
+  text-align: center;
   font-size: .32rem;
   color: #fff;
   background: @theme-color;
