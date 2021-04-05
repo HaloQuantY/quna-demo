@@ -7,7 +7,11 @@
         <i class="iconfont iconsearch"></i>输入城市/景点/游玩主题
       </div>
       <div class="header-right">
-        {{ city }}<i class="iconfont iconarrow-down-filling"></i>
+        <router-link to="/city">
+          <div>
+            {{ city }}<i class="iconfont iconarrow-down-filling"></i>
+          </div>
+        </router-link>
       </div>
   </div>
 </template>
@@ -29,8 +33,8 @@ export default {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height: .86rem;
-      line-height: .86rem;
+      height: @header-height;
+      line-height: @header-height;
       color: #fff;
       background: @theme-color;
       .header-left {
@@ -53,6 +57,10 @@ export default {
       .header-right {
         width: 1.24rem;
         text-align: center;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
         .iconfont {
           margin-left: .04rem;
           font-size: .2rem;
