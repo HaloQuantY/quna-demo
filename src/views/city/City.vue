@@ -3,7 +3,6 @@
     <CityHeader />
     <CitySearch :cities="cities"/>
     <CityList
-      :city="city"
       :cities="cities"
       :hotCities="hotCities"
       :letter="letter"
@@ -24,7 +23,6 @@ export default {
   name: 'City',
   data () {
     return {
-      city: '',
       cities: {},
       hotCities: [],
       letter: ''

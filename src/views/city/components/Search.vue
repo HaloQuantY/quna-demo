@@ -10,7 +10,12 @@
     </div>
     <div class="search-content" ref="searchPop" v-show="keyword">
       <ul class="search-list">
-        <li class="search-item" v-for="item in list" :key="item.id">
+        <li
+          class="search-item"
+          v-for="item in list"
+          :key="item.id"
+          @click="handleClickCity(item.name)"
+        >
           {{ item.name }}
         </li>
         <li class="search-item" v-show="showTip">
@@ -23,6 +28,7 @@
 
 <script>
 import BScoll from '@better-scroll/core'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'CitySearch',
@@ -36,6 +42,13 @@ export default {
       keyword: '',
       list: [],
       timer: null
+    }
+  },
+  methods: {
+    ...mapMutations(['changeCity']),
+    handleClickCity (city) {
+      this.changeCity(city)
+      this.$router.push('/')
     }
   },
   computed: {
@@ -70,7 +83,9 @@ export default {
     }
   },
   mounted () {
-    this.bs = new BScoll(this.$refs.searchPop, {})
+    this.bs = new BScoll(this.$refs.searchPop, {
+      click: true
+    })
   }
 }
 </script>
