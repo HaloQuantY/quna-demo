@@ -17,6 +17,7 @@ import HomeRecommend from './components/Recommend'
 import HomeVacation from './components/Vacation'
 
 import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -35,11 +36,13 @@ export default {
       vacationList: []
     }
   },
+  computed: {
+    ...mapState(['city'])
+  },
   methods: {
     getIndexInfo () {
-      axios.get('/api/index.json').then(res => {
+      axios.get('/api/index.json?city=' + this.city).then(res => {
         const data = res.data
-        this.city = data.city
         this.swiperList = data.swiperList
         this.itemList = data.itemList
         this.recommendList = data.recommendList
@@ -48,7 +51,14 @@ export default {
     }
   },
   mounted () {
+    this.lastCity = this.city
     this.getIndexInfo()
+  },
+  activated () {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getIndexInfo()
+    }
   }
 }
 </script>
