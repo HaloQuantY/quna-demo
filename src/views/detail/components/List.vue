@@ -27,20 +27,23 @@ export default {
 
 <style lang="less" scoped>
 @import '~@/assets/styles/variable.less';
-.item-title {
-  line-height: 0.8rem;
-  font-size: 0.32rem;
-  padding: 0 0.2rem;
-  border-bottom: 1px solid #ccc;
-  .item-title-icon {
-    display: inline-block;
-    width: 0.36rem;
-    height: 0.36rem;
-    margin-right: .1rem;
-    color: @theme-color;
+.item {
+  list-style: none;
+  .item-title {
+    line-height: 0.8rem;
+    font-size: 0.32rem;
+    padding: 0 0.2rem;
+    border-bottom: 1px solid #ccc;
+    .item-title-icon {
+      display: inline-block;
+      width: 0.36rem;
+      height: 0.36rem;
+      margin-right: 0.1rem;
+      color: @theme-color;
+    }
   }
-}
-.item-children {
-  padding: 0 .2rem;
+  .item-children {
+    padding: 0 0.2rem;
+  }
 }
 </style>

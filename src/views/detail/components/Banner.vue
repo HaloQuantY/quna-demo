@@ -2,15 +2,15 @@
   <div class="banner">
     <img
       class="banner-img"
-      src="https://img1.qunarzz.com/vs_ceph_b2c_001/bb53a330-192a-4847-9004-aae600cd96cd.jpg_r_640x420x95_094b9e2b.jpg"
+      :src="bannerImg"
       @click="showGallary"
     />
     <div class="banner-info">
-      <p class="banner-title">产品编号<span>2048783229</span></p>
-      <p class="banner-number">9<i class="iconfont iconpic"></i></p>
+      <p class="banner-title">产品编号<span>{{ productNumber }}</span></p>
+      <p class="banner-number">{{ gallaryImgs.length }}<i class="iconfont iconpic"></i></p>
     </div>
     <CommonGallary
-      :imgs="imgs"
+      :imgs="gallaryImgs"
       v-show="ifShowGallary"
       @closeGallary="handleCloseGallary"
     />
@@ -25,12 +25,19 @@ export default {
   components: {
     CommonGallary
   },
+  props: {
+    productNumber: {
+      type: String
+    },
+    bannerImg: {
+      type: String
+    },
+    gallaryImgs: {
+      type: Array
+    }
+  },
   data () {
     return {
-      imgs: [
-        'https://img1.qunarzz.com/vs_ceph_b2c_001/bb53a330-192a-4847-9004-aae600cd96cd.jpg_r_640x420x95_094b9e2b.jpg',
-        'https://img1.qunarzz.com/vs_ceph_b2c_001/9e95f938-040a-492e-960b-f5669653d55d.jpg_r_640x420x95_7f193f8d.jpg'
-      ],
       ifShowGallary: false
     }
   },
