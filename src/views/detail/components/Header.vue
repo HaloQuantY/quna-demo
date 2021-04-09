@@ -30,7 +30,10 @@ export default {
         return
       }
       this.timer = setTimeout(() => {
-        const top = document.documentElement.scrollTop
+        const top =
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          window.pageYOffset
         if (top > 60) {
           this.showAbs = false
           let opacity = top / 140
@@ -43,10 +46,10 @@ export default {
       }, 100)
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
+  beforeDestroy () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }

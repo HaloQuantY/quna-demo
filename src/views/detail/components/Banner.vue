@@ -1,29 +1,33 @@
 <template>
   <div class="banner">
-    <img
-      class="banner-img"
-      :src="bannerImg"
-      @click="showGallary"
-    />
+    <img class="banner-img" :src="bannerImg" @click="showGallary" />
     <div class="banner-info">
-      <p class="banner-title">产品编号<span>{{ productNumber }}</span></p>
-      <p class="banner-number">{{ gallaryImgs.length }}<i class="iconfont iconpic"></i></p>
+      <p class="banner-title">
+        产品编号<span>{{ productNumber }}</span>
+      </p>
+      <p class="banner-number">
+        {{ gallaryImgs.length }}<i class="iconfont iconpic"></i>
+      </p>
     </div>
-    <CommonGallary
-      :imgs="gallaryImgs"
-      v-show="ifShowGallary"
-      @closeGallary="handleCloseGallary"
-    />
+    <fade-animation>
+      <CommonGallary
+        :imgs="gallaryImgs"
+        v-show="ifShowGallary"
+        @closeGallary="handleCloseGallary"
+      />
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallary from '@/common/gallary/Gallary'
+import FadeAnimation from '@/common/fade-animation/FadeAnimation'
 
 export default {
   name: 'DetailBanner',
   components: {
-    CommonGallary
+    CommonGallary,
+    FadeAnimation
   },
   props: {
     productNumber: {
