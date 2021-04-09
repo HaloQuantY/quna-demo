@@ -2,14 +2,20 @@
   <div class="recommend">
     <p class="recommend-title">热销推荐</p>
     <ul class="recommend-list">
-      <li class="item" v-for="item in recommendList" :key="item.id">
+      <router-link
+        tag="li"
+        to="/detail"
+        class="item"
+        v-for="item in recommendList"
+        :key="item.id"
+      >
         <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{ item.itemTitle }}</p>
           <p class="item-des">{{ item.itemDes }}</p>
           <button class="item-btn">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -61,9 +67,9 @@ export default {
         .ellipsis();
       }
       .item-btn {
-        margin-top: .2rem;
-        padding: .05rem .2rem;
-        font-size: .28rem;
+        margin-top: 0.2rem;
+        padding: 0.05rem 0.2rem;
+        font-size: 0.28rem;
         color: #fff;
         background: #ff9300;
         border-radius: 0.06rem;
